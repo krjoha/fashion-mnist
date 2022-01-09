@@ -1,0 +1,17 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python fashion_mnist/data/make_dataset.py
+    deps:
+    - path: fashion_mnist/data/make_dataset.py
+      md5: 1f44466f9de2452814d1543517d45d97
+      size: 1401
+    outs:
+    - path: data/interim
+      md5: b86e08536c44f8197d9a7b525eac966c.dir
+      size: 155204944
+      nfiles: 2
+    - path: data/raw
+      md5: 8a31b1338b609cf1133d1df639de606c.dir
+      size: 30878645
+      nfiles: 4
