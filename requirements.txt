@@ -1,0 +1,16 @@
+# local package
+-e .
+
+# external requirements (please freeze version to the one you are using)
+bandit==1.7.1
+doit==0.34.0
+dvc==2.9.3
+flake8==4.0.1
+loguru==0.5.3
+mlflow==1.22.0
+pylint==2.12.2
+pytest==6.2.5
+pytest-cov==3.0.0
+python-dotenv==0.19.2
+
+# Add new requirements below

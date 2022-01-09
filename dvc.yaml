@@ -1,0 +1,54 @@
+stages:
+  prepare:
+    cmd: python fashion_mnist/data/make_dataset.py
+    deps:
+    - data/raw
+    - fashion_mnist/data/make_dataset.py
+    params:
+    - seed
+    - prepare.split
+    outs:
+    - data/interim
+  visualize:
+    cmd: python fashion_mnist/visualization/visualize.py
+    deps:
+    - data/raw
+    - fashion_mnist/visualization/visualize.py
+    outs:
+    - reports/figures/image1.png
+  featurize:
+    cmd: python fashion_mnist/features/build_features.py
+    deps:
+    - data/interim
+    - fashion_mnist/features/build_features.py
+    outs:
+    - data/processed
+  train:
+    cmd: python fashion_mnist/models/train_model.py
+    deps:
+    - data/processed
+    - fashion_mnist/models/train_model.py
+    params:
+    - seed
+    - train.batch_size
+    - train.learning_rate
+    outs:
+    - models/model
+  evaluate:
+    cmd: python fashion_mnist/models/evaluate_model.py
+    deps:
+    - data/processed
+    - fashion_mnist/models/evaluate_model.py
+    - models/model
+    metrics:
+    - models/scores.json:
+        cache: false
+    plots:
+    - models/prc.json:
+        cache: false
+        x: recall
+        y: precision
+    - models/roc.json:
+        cache: false
+        x: fpr
+        y: tpr
