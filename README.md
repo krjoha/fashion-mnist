@@ -3,14 +3,15 @@ fashion-mnist
 
 Using the fashion-mnist dataset to demonstrate ML-pipelines and experimentation with DVC.
 
+
 To build a docker image:
 ```
 docker build -t fashion-mnist --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) -f Dockerfile .
 ```
 
-To start a docker container, mount current directory and connect to the container:
+To start a docker container, expose GPU, mount current directory and connect to the container:
 ```
-docker run -d --rm -it --volume $(pwd):/workspace --name fashion-mnist fashion-mnist
+docker run -d --rm -it --gpus all --volume $(pwd):/workspace --name fashion-mnist fashion-mnist
 docker exec -it fashion-mnist /bin/bash
 ```
 
