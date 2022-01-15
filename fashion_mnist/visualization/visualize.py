@@ -28,4 +28,4 @@ for i in range(img_per_label):
 
 plt.figure(figsize=(15, 15))
 plt.axis("off")
-plt.imsave("/workspace/reports/figures/zalando-mnist-sprite.png", image, cmap="gray")
+plt.imsave(os.path.join(OUTPUT_PATH, "zalando-mnist-sprite.png"), image, cmap="gray")

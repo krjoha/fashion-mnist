@@ -1,33 +1,18 @@
 fashion-mnist
 ==============================
-
 Using the fashion-mnist dataset to demonstrate ML-pipelines and experimentation with DVC.
 
+[DVC studio](https://studio.iterative.ai/user/krjoha/views/fashion-mnist-tw21cioq1h) shows you a visualization of the ML-project lifecycle.
 
 To build a docker image:
 ```
 docker build -t fashion-mnist --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) -f Dockerfile .
 ```
 
-To start a docker container, expose GPU, mount current directory and connect to the container:
+To start a docker container, expose GPU (optional), mount current directory and connect to the container:
 ```
 docker run -d --rm -it --gpus all --volume $(pwd):/workspace --name fashion-mnist fashion-mnist
 docker exec -it fashion-mnist /bin/bash
-```
-
-If you want to use python environments instead, use the commands below. That creates a virtual python environment in your current folder, activates it and installs dependencies with pip
-```
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-Initialize ```git``` and ```dvc``` and create an initial commit before doing anything else:
-```
-git init
-dvc init
-git add .
-git commit -m "Initial commit"
 ```
 
 Use ```doit``` to run linting and tests:

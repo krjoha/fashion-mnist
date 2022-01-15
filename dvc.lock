@@ -23,7 +23,7 @@ stages:
       size: 155204944
       nfiles: 2
     - path: fashion_mnist/visualization/visualize.py
-      md5: 8b1a1da5078c05f2e3513aceb5e1ccda
+      md5: 41466b989347f99a9bfd20b9b74ff9f9
       size: 934
     outs:
     - path: reports/figures/
