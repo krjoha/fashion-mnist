@@ -3,6 +3,7 @@
 
 # external requirements (please freeze version to the one you are using)
 bandit==1.7.1
+black==21.12b0
 doit==0.34.0
 dvc==2.9.3
 flake8==4.0.1
@@ -16,3 +17,5 @@ python-dotenv==0.19.2
 # Add new requirements below
 jupyterlab==3.2.8
 matplotlib==3.5.1
+pydrive2==1.10.0
+tokenize-rt==4.2.1
