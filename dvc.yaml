@@ -2,7 +2,15 @@ stages:
   prepare:
     cmd: python fashion_mnist/data/make_dataset.py
     deps:
-    - fashion_mnist/data/make_dataset.py
+      - fashion_mnist/data/make_dataset.py
     outs:
-    - data/interim
-    - data/raw
+      - data/interim
+      - data/raw
+  visualize:
+    cmd: python fashion_mnist/visualization/visualize.py
+    deps:
+      - fashion_mnist/visualization/visualize.py
+      - data/interim
+    plots:
+      - reports/figures/:
+          cache: false

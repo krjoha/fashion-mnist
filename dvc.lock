@@ -15,3 +15,18 @@ stages:
       md5: 8a31b1338b609cf1133d1df639de606c.dir
       size: 30878645
       nfiles: 4
+  visualize:
+    cmd: python fashion_mnist/visualization/visualize.py
+    deps:
+    - path: data/interim
+      md5: b86e08536c44f8197d9a7b525eac966c.dir
+      size: 155204944
+      nfiles: 2
+    - path: fashion_mnist/visualization/visualize.py
+      md5: 8b1a1da5078c05f2e3513aceb5e1ccda
+      size: 934
+    outs:
+    - path: reports/figures/
+      md5: 3203f40e87b792de47cad04b6d09d3d2.dir
+      size: 260217
+      nfiles: 1
