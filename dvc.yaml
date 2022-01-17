@@ -14,3 +14,10 @@ stages:
     plots:
       - reports/figures/:
           cache: false
+  featurize:
+    cmd: python fashion_mnist/features/build_features.py
+    deps:
+      - fashion_mnist/features/build_features.py
+      - data/interim
+    outs:
+      - data/processed

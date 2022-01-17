@@ -18,4 +18,5 @@ python-dotenv==0.19.2
 jupyterlab==3.2.8
 matplotlib==3.5.1
 pydrive2==1.10.0
+scikit-learn==1.0.2
 tokenize-rt==4.2.1

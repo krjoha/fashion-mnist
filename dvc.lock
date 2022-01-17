@@ -30,3 +30,18 @@ stages:
       md5: 3203f40e87b792de47cad04b6d09d3d2.dir
       size: 260217
       nfiles: 1
+  featurize:
+    cmd: python fashion_mnist/features/build_features.py
+    deps:
+    - path: data/interim
+      md5: b86e08536c44f8197d9a7b525eac966c.dir
+      size: 155204944
+      nfiles: 2
+    - path: fashion_mnist/features/build_features.py
+      md5: f3165816fec182df5643577451a0ec47
+      size: 903
+    outs:
+    - path: data/processed
+      md5: 1d781b2497211232451126d42c1b12fc.dir
+      size: 61026694
+      nfiles: 2
