@@ -15,8 +15,12 @@ pytest-cov==3.0.0
 python-dotenv==0.19.2
 
 # Add new requirements below
+joblib==1.0.1
 jupyterlab==3.2.8
+numpy==1.19.5
 matplotlib==3.5.1
+pycaret==2.3.6
 pydrive2==1.10.0
-scikit-learn==1.0.2
+pyyaml==5.4.1
+scikit-learn==0.23.2
 tokenize-rt==4.2.1
