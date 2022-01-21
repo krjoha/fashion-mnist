@@ -4,5 +4,6 @@ prepare:
   split: 0.15
 
 train:
-  batch_size: 64
-  learning_rate: 0.001
+  val_split: 0.15
+  max_depth: 32
+  num_estimators: 500

@@ -45,3 +45,27 @@ stages:
       md5: 1d781b2497211232451126d42c1b12fc.dir
       size: 61026694
       nfiles: 2
+  train:
+    cmd: python fashion_mnist/models/train_model.py data/processed/ models/model.joblib
+      models/metrics.json
+    deps:
+    - path: data/processed
+      md5: 1d781b2497211232451126d42c1b12fc.dir
+      size: 61026694
+      nfiles: 2
+    - path: fashion_mnist/models/train_model.py
+      md5: c0147008ac28594111dc9d7e69792498
+      size: 993
+    params:
+      params.yaml:
+        seed: 20211121
+        train.max_depth: 32
+        train.num_estimators: 500
+        train.val_split: 0.15
+    outs:
+    - path: models/metrics.json
+      md5: 9a72c0f9b0a9ace93b13fdf2caaf9e8d
+      size: 37
+    - path: models/model.joblib
+      md5: ed11bf505deabd1b40635b4bdb7cd485
+      size: 583124621
