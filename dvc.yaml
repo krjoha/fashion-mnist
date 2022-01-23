@@ -12,7 +12,7 @@ stages:
       - fashion_mnist/visualization/visualize.py
       - data/interim
     plots:
-      - reports/figures/:
+      - reports/figures/zalando-mnist-sprite.png:
           cache: false
   featurize:
     cmd: python fashion_mnist/features/build_features.py
@@ -22,7 +22,7 @@ stages:
     outs:
       - data/processed
   train:
-    cmd: python fashion_mnist/models/train_model.py data/processed/ models/model.joblib models/metrics.json
+    cmd: python fashion_mnist/models/train_model.py
     deps:
       - fashion_mnist/models/train_model.py
       - data/processed
@@ -33,6 +33,138 @@ stages:
       - train.val_split
       - train.max_depth
       - train.num_estimators
+  evaluate:
+    cmd: python fashion_mnist/models/evaluate_model.py
+    deps:
+      - fashion_mnist/models/evaluate_model.py
+      - models/model.joblib
     metrics:
       - models/metrics.json:
           cache: false
+    plots:
+      - models/prc-0.json:
+          cache: false
+          x: recall
+          y: precision
+          title: Precision/Recall t_shirt_top
+      - models/prc-1.json:
+          cache: false
+          x: recall
+          y: precision
+          title: Precision/Recall trouser
+      - models/prc-2.json:
+          cache: false
+          x: recall
+          y: precision
+          title: Precision/Recall pullover
+      - models/prc-3.json:
+          cache: false
+          x: recall
+          y: precision
+          title: Precision/Recall dress
+      - models/prc-4.json:
+          cache: false
+          x: recall
+          y: precision
+          title: Precision/Recall coat
+      - models/prc-5.json:
+          cache: false
+          x: recall
+          y: precision
+          title: Precision/Recall sandal
+      - models/prc-6.json:
+          cache: false
+          x: recall
+          y: precision
+          title: Precision/Recall shirt
+      - models/prc-7.json:
+          cache: false
+          x: recall
+          y: precision
+          title: Precision/Recall sneaker
+      - models/prc-8.json:
+          cache: false
+          x: recall
+          y: precision
+          title: Precision/Recall bag
+      - models/prc-9.json:
+          cache: false
+          x: recall
+          y: precision
+          title: Precision/Recall ankle_boots
+      - models/roc-0.json:
+          cache: false
+          x: fpr
+          x_label: False Positive Rate
+          y: tpr
+          y_label: True Positive Rate
+          title: ROC t_shirt_top
+      - models/roc-1.json:
+          cache: false
+          x: fpr
+          x_label: False Positive Rate
+          y: tpr
+          y_label: True Positive Rate
+          title: ROC trouser
+      - models/roc-2.json:
+          cache: false
+          x: fpr
+          x_label: False Positive Rate
+          y: tpr
+          y_label: True Positive Rate
+          title: ROC pullover
+      - models/roc-3.json:
+          cache: false
+          x: fpr
+          x_label: False Positive Rate
+          y: tpr
+          y_label: True Positive Rate
+          title: ROC dress
+      - models/roc-4.json:
+          cache: false
+          x: fpr
+          x_label: False Positive Rate
+          y: tpr
+          y_label: True Positive Rate
+          title: ROC coat
+      - models/roc-5.json:
+          cache: false
+          x: fpr
+          x_label: False Positive Rate
+          y: tpr
+          y_label: True Positive Rate
+          title: ROC sandal
+      - models/roc-6.json:
+          cache: false
+          x: fpr
+          x_label: False Positive Rate
+          y: tpr
+          y_label: True Positive Rate
+          title: ROC shirt
+      - models/roc-7.json:
+          cache: false
+          x: fpr
+          x_label: False Positive Rate
+          y: tpr
+          y_label: True Positive Rate
+          title: ROC sneaker
+      - models/roc-8.json:
+          cache: false
+          x: fpr
+          x_label: False Positive Rate
+          y: tpr
+          y_label: True Positive Rate
+          title: ROC bag
+      - models/roc-9.json:
+          cache: false
+          x: fpr
+          x_label: False Positive Rate
+          y: tpr
+          y_label: True Positive Rate
+          title: ROC ankle_boots
+      - models/predictions.csv:
+          cache: false
+          template: confusion
+          x: label
+          y: prediction
+          title: Confusion matrix

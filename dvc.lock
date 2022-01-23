@@ -26,10 +26,9 @@ stages:
       md5: 41466b989347f99a9bfd20b9b74ff9f9
       size: 934
     outs:
-    - path: reports/figures/
-      md5: 3203f40e87b792de47cad04b6d09d3d2.dir
+    - path: reports/figures/zalando-mnist-sprite.png
+      md5: 5b6ec5fbe22eac8139544b5e4eeaee1a
       size: 260217
-      nfiles: 1
   featurize:
     cmd: python fashion_mnist/features/build_features.py
     deps:
@@ -46,26 +45,98 @@ stages:
       size: 61026694
       nfiles: 2
   train:
-    cmd: python fashion_mnist/models/train_model.py data/processed/ models/model.joblib
-      models/metrics.json
+    cmd: python fashion_mnist/models/train_model.py
     deps:
     - path: data/processed
       md5: 1d781b2497211232451126d42c1b12fc.dir
       size: 61026694
       nfiles: 2
     - path: fashion_mnist/models/train_model.py
-      md5: c0147008ac28594111dc9d7e69792498
-      size: 993
+      md5: 4341ae3539b0a633250393acccf59d85
+      size: 1142
     params:
       params.yaml:
         seed: 20211121
-        train.max_depth: 32
-        train.num_estimators: 500
+        train.max_depth: 10
+        train.num_estimators: 100
         train.val_split: 0.15
     outs:
-    - path: models/metrics.json
-      md5: 9a72c0f9b0a9ace93b13fdf2caaf9e8d
-      size: 37
     - path: models/model.joblib
-      md5: ed11bf505deabd1b40635b4bdb7cd485
-      size: 583124621
+      md5: c195135e6d27afedd933f3ca4496e1ae
+      size: 46219063
+  evaluate:
+    cmd: python fashion_mnist/models/evaluate_model.py
+    deps:
+    - path: fashion_mnist/models/evaluate_model.py
+      md5: 01b122651fa1b0451f5471a5f6fa9224
+      size: 3689
+    - path: models/model.joblib
+      md5: c195135e6d27afedd933f3ca4496e1ae
+      size: 46219063
+    outs:
+    - path: models/metrics.json
+      md5: a34678fb376556af6ba92be204f1c4fc
+      size: 150
+    - path: models/prc-0.json
+      md5: 56bfdcc56062f98c50ad90cdb9981b88
+      size: 132107
+    - path: models/prc-1.json
+      md5: b93b46ea8dce1fc3811e36e96c28e208
+      size: 135387
+    - path: models/prc-2.json
+      md5: eeac210616d2a7573b43f2f188b3195a
+      size: 132800
+    - path: models/prc-3.json
+      md5: 56c7970e23c0b635633d949d48a9deb6
+      size: 129826
+    - path: models/prc-4.json
+      md5: 6d96a3ee089339d58d17e294edf901c6
+      size: 139292
+    - path: models/prc-5.json
+      md5: 0ec2ba4c7e4bb9e16bf424b62a740f16
+      size: 96694
+    - path: models/prc-6.json
+      md5: 2d529dcaee4e5d37a239fc6b52e619e4
+      size: 126591
+    - path: models/prc-7.json
+      md5: 0d9b0d72251377b835cbc7e892df5f36
+      size: 98053
+    - path: models/prc-8.json
+      md5: 45bfc13c0d9d4b1c7db1fbe0afe7f1a5
+      size: 132537
+    - path: models/prc-9.json
+      md5: 995c2d1e69b250b99eb274a6e090312f
+      size: 136351
+    - path: models/predictions.csv
+      md5: 7ef6c2dde18da178717336f7b74d7860
+      size: 171860
+    - path: models/roc-0.json
+      md5: e9fe57d0ee8af130b0d5d16bbc1968c0
+      size: 100019
+    - path: models/roc-1.json
+      md5: 2430175e58930de8a30cb28ce6e7e787
+      size: 60731
+    - path: models/roc-2.json
+      md5: ca3f5b08dff94d7056c3aa80ccf3f250
+      size: 144562
+    - path: models/roc-3.json
+      md5: 3b9e98c31be9e9a01167ffefe70adf80
+      size: 92599
+    - path: models/roc-4.json
+      md5: ac64af559d3538fb68f92da83fc9f7a5
+      size: 115479
+    - path: models/roc-5.json
+      md5: 4b24b87ee3ba006c738fc178a0f250b6
+      size: 77591
+    - path: models/roc-6.json
+      md5: 88267ff81177adc578eb71ae8ac9a366
+      size: 165647
+    - path: models/roc-7.json
+      md5: d5514e208a0c0eea41f236bdeb5d90f3
+      size: 52670
+    - path: models/roc-8.json
+      md5: 35d96a7cfc16a9f95faeba887488147d
+      size: 43153
+    - path: models/roc-9.json
+      md5: 237830436306214ecfbb79cbb3161de1
+      size: 99290
