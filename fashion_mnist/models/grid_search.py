@@ -2,8 +2,8 @@ import itertools
 import subprocess
 
 # Automated grid search experiments
-max_depth_values = [5, 10, 15, 20]
-num_estimators_values = [50, 100, 150, 200]
+max_depth_values = [10, 20, 30, 40]
+num_estimators_values = [100, 200, 300, 400]
 
 # Iterate over all combinations of hyperparameter values.
 for max_depth, num_estimators in itertools.product(

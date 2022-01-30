@@ -6,4 +6,4 @@ prepare:
 train:
   val_split: 0.15
   max_depth: 20
-  num_estimators: 150
+  num_estimators: 400
