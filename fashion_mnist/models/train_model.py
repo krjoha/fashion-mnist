@@ -20,12 +20,12 @@ train_labels = train["labels"]
 train_labels_binary = label_binarize(train_labels, classes=[*range(10)])
 
 # If need for validation set
-#X_train, X_test, y_train, y_test = model_selection.train_test_split(
+# X_train, X_test, y_train, y_test = model_selection.train_test_split(
 #    train_data,
 #    train_labels_binary,
 #    test_size=params["train"]["val_split"],
 #    random_state=params["seed"],
-#)
+# )
 
 model = OneVsRestClassifier(
     RandomForestClassifier(

@@ -87,6 +87,7 @@ class NpEncoder(json.JSONEncoder):
             return obj.tolist()
         return super(NpEncoder, self).default(obj)
 
+
 for i in range(num_labels):
     nth_point = math.ceil(len(prc_thresholds[i]) / 1000)
     prc_points = list(zip(precision_curves[i], recall_curves[i], prc_thresholds[i]))[
@@ -96,7 +97,8 @@ for i in range(num_labels):
         json.dump(
             {
                 "prc": [
-                    {"precision": p, "recall": r, "threshold": t} for p, r, t in prc_points
+                    {"precision": p, "recall": r, "threshold": t}
+                    for p, r, t in prc_points
                 ]
             },
             fd,
