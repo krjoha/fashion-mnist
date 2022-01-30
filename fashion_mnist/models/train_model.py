@@ -7,10 +7,11 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.preprocessing import label_binarize
 
-TRAIN_FILE = "/workspace/data/processed/mnist_train.npz"
-OUTPUT_PATH = "/workspace/models/"
 
-os.makedirs(OUTPUT_PATH, exist_ok=True)
+TRAIN_FILE = "data/processed/mnist_train.npz"
+OUTPUT_FILE = "models/model.joblib"
+
+os.makedirs("models", exist_ok=True)
 params = yaml.safe_load(open("params.yaml"))
 
 train = np.load(TRAIN_FILE)
@@ -36,4 +37,4 @@ model = OneVsRestClassifier(
 )
 
 model.fit(train_data, train_labels_binary)
-dump(model, os.path.join(OUTPUT_PATH, "model.joblib"))
+dump(model, OUTPUT_FILE)

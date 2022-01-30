@@ -11,9 +11,9 @@ from sklearn.metrics import roc_curve
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.preprocessing import LabelBinarizer
 
-MODEL_FILE = "/workspace/models/model.joblib"
-TEST_FILE = "/workspace/data/processed/mnist_test.npz"
-OUTPUT_PATH = "/workspace/models/"
+MODEL_FILE = "models/model.joblib"
+TEST_FILE = "data/processed/mnist_test.npz"
+OUTPUT_PATH = "models/"
 LABELS = {
     0: "t_shirt_top",
     1: "trouser",

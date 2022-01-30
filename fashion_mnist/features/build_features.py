@@ -3,8 +3,8 @@ import os
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
-INPUT_PATH = "/workspace/data/interim/"
-OUTPUT_PATH = "/workspace/data/processed/"
+INPUT_PATH = "data/interim/"
+OUTPUT_PATH = "data/processed/"
 
 os.makedirs(OUTPUT_PATH, exist_ok=True)
 

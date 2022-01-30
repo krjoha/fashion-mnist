@@ -23,8 +23,8 @@ stages:
       size: 155204944
       nfiles: 2
     - path: fashion_mnist/visualization/visualize.py
-      md5: 41466b989347f99a9bfd20b9b74ff9f9
-      size: 934
+      md5: d100d22e6704b5c843585e3ac88c1928
+      size: 912
     outs:
     - path: reports/figures/zalando-mnist-sprite.png
       md5: 5b6ec5fbe22eac8139544b5e4eeaee1a
@@ -37,8 +37,8 @@ stages:
       size: 155204944
       nfiles: 2
     - path: fashion_mnist/features/build_features.py
-      md5: f3165816fec182df5643577451a0ec47
-      size: 903
+      md5: 85c914e6c97971bc87062ff569312174
+      size: 881
     outs:
     - path: data/processed
       md5: 1d781b2497211232451126d42c1b12fc.dir
@@ -52,8 +52,8 @@ stages:
       size: 61026694
       nfiles: 2
     - path: fashion_mnist/models/train_model.py
-      md5: 4341ae3539b0a633250393acccf59d85
-      size: 1142
+      md5: de27f7ebacb955fac94fb419e3a7f438
+      size: 1100
     params:
       params.yaml:
         seed: 20211121
@@ -62,81 +62,81 @@ stages:
         train.val_split: 0.15
     outs:
     - path: models/model.joblib
-      md5: c195135e6d27afedd933f3ca4496e1ae
-      size: 46219063
+      md5: 1a30ac44ffbe3b74eb1d84bdd93c846a
+      size: 46237240
   evaluate:
     cmd: python fashion_mnist/models/evaluate_model.py
     deps:
     - path: fashion_mnist/models/evaluate_model.py
-      md5: 01b122651fa1b0451f5471a5f6fa9224
-      size: 3689
+      md5: e3e8b7b0da7074f192a21a924bdc6770
+      size: 3656
     - path: models/model.joblib
-      md5: c195135e6d27afedd933f3ca4496e1ae
-      size: 46219063
+      md5: 1a30ac44ffbe3b74eb1d84bdd93c846a
+      size: 46237240
     outs:
     - path: models/metrics.json
       md5: a34678fb376556af6ba92be204f1c4fc
       size: 150
     - path: models/prc-0.json
-      md5: 56bfdcc56062f98c50ad90cdb9981b88
-      size: 132107
+      md5: cd7187e74e01c90eafe530bd5d69b247
+      size: 132114
     - path: models/prc-1.json
-      md5: b93b46ea8dce1fc3811e36e96c28e208
-      size: 135387
+      md5: c7a5c2480459dd65e1a8daa55d95c660
+      size: 135390
     - path: models/prc-2.json
-      md5: eeac210616d2a7573b43f2f188b3195a
-      size: 132800
+      md5: 9691a3b35eefdf6ec7f13ef784ebb4b3
+      size: 132801
     - path: models/prc-3.json
-      md5: 56c7970e23c0b635633d949d48a9deb6
-      size: 129826
+      md5: cb8ed70b005e9caea2e037be1f51aa27
+      size: 129801
     - path: models/prc-4.json
-      md5: 6d96a3ee089339d58d17e294edf901c6
-      size: 139292
+      md5: 866f0dbbd062580cd5ad1fd631702efe
+      size: 139275
     - path: models/prc-5.json
-      md5: 0ec2ba4c7e4bb9e16bf424b62a740f16
-      size: 96694
+      md5: bbb61459eb2a476b837e812cc1d2ae7d
+      size: 96702
     - path: models/prc-6.json
-      md5: 2d529dcaee4e5d37a239fc6b52e619e4
-      size: 126591
+      md5: 290bd5c4b248bec58eb5589342a37fae
+      size: 126575
     - path: models/prc-7.json
-      md5: 0d9b0d72251377b835cbc7e892df5f36
-      size: 98053
+      md5: 607b24d08fdc49fac5836d7e14630ae2
+      size: 98069
     - path: models/prc-8.json
-      md5: 45bfc13c0d9d4b1c7db1fbe0afe7f1a5
-      size: 132537
+      md5: df08ee9d99c99c18a89a11b0a93cf5d7
+      size: 132559
     - path: models/prc-9.json
-      md5: 995c2d1e69b250b99eb274a6e090312f
-      size: 136351
+      md5: faf6a66b2d4192c208f8cce5af999514
+      size: 136361
     - path: models/predictions.csv
       md5: 7ef6c2dde18da178717336f7b74d7860
       size: 171860
     - path: models/roc-0.json
-      md5: e9fe57d0ee8af130b0d5d16bbc1968c0
-      size: 100019
+      md5: 4fed623316c6f72bb869cb61a14d47db
+      size: 100034
     - path: models/roc-1.json
-      md5: 2430175e58930de8a30cb28ce6e7e787
-      size: 60731
+      md5: c105653b69b9731d2f879ef36978ff06
+      size: 60730
     - path: models/roc-2.json
-      md5: ca3f5b08dff94d7056c3aa80ccf3f250
-      size: 144562
+      md5: 18d54c3fd91c19e8f0627bbfd058090d
+      size: 144544
     - path: models/roc-3.json
-      md5: 3b9e98c31be9e9a01167ffefe70adf80
-      size: 92599
+      md5: 50c99df957ed508e255e14bb634c5d71
+      size: 92591
     - path: models/roc-4.json
-      md5: ac64af559d3538fb68f92da83fc9f7a5
-      size: 115479
+      md5: 5a9855aca67771c28c3d30756984d23d
+      size: 115501
     - path: models/roc-5.json
-      md5: 4b24b87ee3ba006c738fc178a0f250b6
-      size: 77591
+      md5: 8685a2a8c61786ff21857b6ffdfde7d5
+      size: 77595
     - path: models/roc-6.json
-      md5: 88267ff81177adc578eb71ae8ac9a366
-      size: 165647
+      md5: 1f293c26b516a4d984f0dd5a4b682a7f
+      size: 165640
     - path: models/roc-7.json
-      md5: d5514e208a0c0eea41f236bdeb5d90f3
-      size: 52670
+      md5: c231722ab146a93b227a243d99843bbe
+      size: 52671
     - path: models/roc-8.json
-      md5: 35d96a7cfc16a9f95faeba887488147d
-      size: 43153
+      md5: c05f4ec6b56be54ecbdbbbcc48686553
+      size: 43149
     - path: models/roc-9.json
-      md5: 237830436306214ecfbb79cbb3161de1
-      size: 99290
+      md5: 04ff39a7f1ddfab7ffdecc07dda32070
+      size: 99301

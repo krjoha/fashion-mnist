@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-INPUT_PATH = "/workspace/data/interim/mnist_test.csv"
-OUTPUT_PATH = "/workspace/reports/figures/"
+INPUT_PATH = "data/interim/mnist_test.csv"
+OUTPUT_PATH = "reports/figures/"
 
 os.makedirs(OUTPUT_PATH, exist_ok=True)
 df = pd.read_csv(INPUT_PATH, header=None)
