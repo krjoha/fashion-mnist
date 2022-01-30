@@ -2,6 +2,7 @@ import os
 import numpy as np
 import yaml
 from joblib import dump
+from lightgbm import LGBMClassifier
 from sklearn import model_selection
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.multiclass import OneVsRestClassifier
@@ -28,11 +29,11 @@ train_labels_binary = label_binarize(train_labels, classes=[*range(10)])
 # )
 
 model = OneVsRestClassifier(
-    RandomForestClassifier(
+    LGBMClassifier(
+        boosting_type="gbdt",
         n_estimators=params["train"]["num_estimators"],
-        n_jobs=-1,
         max_depth=params["train"]["max_depth"],
-        random_state=params["seed"],
+        random_state=params["seed"]
     )
 )
 

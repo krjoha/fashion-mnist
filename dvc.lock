@@ -52,8 +52,8 @@ stages:
       size: 61026694
       nfiles: 2
     - path: fashion_mnist/models/train_model.py
-      md5: d9465bab44584b5972015ba92c40b78a
-      size: 1102
+      md5: 53680800f1b97bac4bfaa79eb02d3b6d
+      size: 1140
     params:
       params.yaml:
         seed: 20211121
@@ -62,8 +62,8 @@ stages:
         train.val_split: 0.15
     outs:
     - path: models/model.joblib
-      md5: 1fc1501dbbf39178f81acdf91e545c50
-      size: 208722472
+      md5: 08c292b3bddfffc59dd06abc93a762a1
+      size: 5770613
   evaluate:
     cmd: python fashion_mnist/models/evaluate_model.py
     deps:
@@ -71,72 +71,72 @@ stages:
       md5: f659769dadb6a57c1cfb81b2232f9f3d
       size: 3712
     - path: models/model.joblib
-      md5: 1fc1501dbbf39178f81acdf91e545c50
-      size: 208722472
+      md5: 08c292b3bddfffc59dd06abc93a762a1
+      size: 5770613
     outs:
     - path: models/metrics.json
-      md5: d0ffbbbc31d9a09d8522d0f3cf46aa33
-      size: 147
+      md5: 2601c9ea4a60fb6464d1d40232da7179
+      size: 148
     - path: models/prc-0.json
-      md5: fd43e6fd2a552f24b093335df6df85dd
-      size: 136873
+      md5: 1b54c4237b5647db98f899e520b696aa
+      size: 123307
     - path: models/prc-1.json
-      md5: 4e468495b1f6cedf2524f1a6e0124019
-      size: 71495
+      md5: aa7e9bcf45283b8177dba0e50c0fea92
+      size: 133568
     - path: models/prc-2.json
-      md5: 31a748498aa5e94df1de89dfbb4c2ba2
-      size: 131813
+      md5: d27fb0ad36642dbc3392ca38709df921
+      size: 135569
     - path: models/prc-3.json
-      md5: a46ff0797967c668efbd79621ad48d53
-      size: 114860
+      md5: b99d19ec437827d5d154c2668ff13345
+      size: 121720
     - path: models/prc-4.json
-      md5: 0c489a56a26af428b4899c5e55978c8a
-      size: 116600
+      md5: db7b33c27bd98812e8fb56b8ba1a894a
+      size: 117847
     - path: models/prc-5.json
-      md5: 025656d8b544d7b281d890c8ee95875a
-      size: 114095
+      md5: 37e2b340917be25259df1c5e48c7d19c
+      size: 90345
     - path: models/prc-6.json
-      md5: c7fbfe7e544e36fca6e09ae38158e1af
-      size: 121534
+      md5: 7c628726d63dc51f8840447971b26e1c
+      size: 130343
     - path: models/prc-7.json
-      md5: 8e24c1c8237a9b7e7f3f9fa829d08ed5
-      size: 98203
+      md5: fc9d6ce391950386948e4dc4e1d74783
+      size: 113354
     - path: models/prc-8.json
-      md5: de5876a9df88d6bc022cfb86f64dda8a
-      size: 118730
+      md5: 3d6b591b10418f9698bea5396c850a60
+      size: 129962
     - path: models/prc-9.json
-      md5: f449abc3f7009990c50fe62caa83b834
-      size: 112971
+      md5: 0db173cb028e68a3e2da14aad9dbde8b
+      size: 102957
     - path: models/predictions.csv
-      md5: aaae4457670c37b1fffbc8dda7a6fc57
-      size: 170781
+      md5: 9f2b7baffaa84c6336d8945b04dd600d
+      size: 168244
     - path: models/roc-0.json
-      md5: f0455c59e4238ad73be62a8c9824e64b
-      size: 153173
+      md5: 4e75fa53002ae61064cb844bb4a70c52
+      size: 59842
     - path: models/roc-1.json
-      md5: 47b8b4394db4816189741b9f99ad9204
-      size: 39249
+      md5: 38c32cae71857ef094b1b359e5bb9a9a
+      size: 8989
     - path: models/roc-2.json
-      md5: f3f14c7febc9fc77a58d2fa552d8628b
-      size: 107076
+      md5: 65d390f70fca3e55b0878b9fc626c76f
+      size: 67327
     - path: models/roc-3.json
-      md5: 329e07afa38d0189850b15051a55ebfc
-      size: 79733
+      md5: 23d4163b7fb2edd45146bc46599fa23d
+      size: 37934
     - path: models/roc-4.json
-      md5: 00fa048628974a7925fe5a39495ac3db
-      size: 104070
+      md5: 490e5e2a5d1bdea0176ed084c95ca8e1
+      size: 65804
     - path: models/roc-5.json
-      md5: 661e0c0bca324107cfe186c4bd52a591
-      size: 59747
+      md5: a889d561095aa74877d07a9dbdf0199c
+      size: 10161
     - path: models/roc-6.json
-      md5: a6172ba159fa21a259506ba6db6072c1
-      size: 147360
+      md5: c912881d46244e5ccf7913d40e5e3c18
+      size: 109726
     - path: models/roc-7.json
-      md5: 900923fdb148a1452d3d12e622122642
-      size: 36367
+      md5: 6d09d08685198a29a188a7f629cc3ecc
+      size: 19508
     - path: models/roc-8.json
-      md5: 3f94b48657b29808a7abd058bbccfc9a
-      size: 36813
+      md5: 3824614eecd4dd3130d9b827a342d4a1
+      size: 11548
     - path: models/roc-9.json
-      md5: 8439f95130bc33da15ba7c5a3c9bf3fa
-      size: 39112
+      md5: b8e14d233afe9963616a6a2f40f9aec6
+      size: 16224
